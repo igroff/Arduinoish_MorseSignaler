@@ -31,43 +31,43 @@
   void MorseSignaler::wordPause(){ delay(DOT_LENGTH * 7); }
 #endif
 
-void MorseSignaler::zero(){ this->dash(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); }
-void MorseSignaler::one(){ this->dot(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); }
-void MorseSignaler::two(){ this->dot(); this->elementPause(); this->dot(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); }
-void MorseSignaler::three(){ this->dot(); this->elementPause(); this->dot(); this->elementPause(); this->dot(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); }
-void MorseSignaler::four(){ this->dot(); this->elementPause(); this->dot(); this->elementPause(); this->dot(); this->elementPause(); this->dot(); this->elementPause(); this->dash(); }
-void MorseSignaler::five(){ this->dot(); this->elementPause(); this->dot(); this->elementPause(); this->dot(); this->elementPause(); this->dot(); this->elementPause(); this->dot(); }
-void MorseSignaler::six(){ this->dash(); this->elementPause(); this->dot(); this->elementPause(); this->dot(); this->elementPause(); this->dot(); this->elementPause(); this->dot(); }
-void MorseSignaler::seven(){ this->dash(); this->elementPause(); this->dash(); this->elementPause(); this->dot(); this->elementPause(); this->dot(); this->elementPause(); this->dot(); }
-void MorseSignaler::eight(){ this->dash(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); this->elementPause(); this->dot(); this->elementPause(); this->dot(); }
-void MorseSignaler::nine(){ this->dash(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); this->elementPause(); this->dot(); }
+void MorseSignaler::zero(){ dash(); elementPause(); dash(); elementPause(); dash(); elementPause(); dash(); elementPause(); dash(); }
+void MorseSignaler::one(){ dot(); elementPause(); dash(); elementPause(); dash(); elementPause(); dash(); elementPause(); dash(); }
+void MorseSignaler::two(){ dot(); elementPause(); dot(); elementPause(); dash(); elementPause(); dash(); elementPause(); dash(); }
+void MorseSignaler::three(){ dot(); elementPause(); dot(); elementPause(); dot(); elementPause(); dash(); elementPause(); dash(); }
+void MorseSignaler::four(){ dot(); elementPause(); dot(); elementPause(); dot(); elementPause(); dot(); elementPause(); dash(); }
+void MorseSignaler::five(){ dot(); elementPause(); dot(); elementPause(); dot(); elementPause(); dot(); elementPause(); dot(); }
+void MorseSignaler::six(){ dash(); elementPause(); dot(); elementPause(); dot(); elementPause(); dot(); elementPause(); dot(); }
+void MorseSignaler::seven(){ dash(); elementPause(); dash(); elementPause(); dot(); elementPause(); dot(); elementPause(); dot(); }
+void MorseSignaler::eight(){ dash(); elementPause(); dash(); elementPause(); dash(); elementPause(); dot(); elementPause(); dot(); }
+void MorseSignaler::nine(){ dash(); elementPause(); dash(); elementPause(); dash(); elementPause(); dash(); elementPause(); dot(); }
 
-void MorseSignaler::a() { this->dot(); this->elementPause(); this->dash(); }
-void MorseSignaler::b() { this->dash(); this->elementPause(); this->dot(); this->elementPause(); this->dot(); this->elementPause(); this->dot(); }
-void MorseSignaler::c() { this->dash(); this->elementPause(); this->dot(); this->elementPause(); this->dash(); this->elementPause(); this->dot(); }
-void MorseSignaler::d() { this->dash(); this->elementPause(); this->dot(); this->elementPause(); this->dot(); }
-void MorseSignaler::e() { this->dot(); }
-void MorseSignaler::f() { this->dot(); this->elementPause(); this->dot(); this->elementPause(); this->dash(); this->elementPause(); this->dot(); }
-void MorseSignaler::g() { this->dash(); this->elementPause(); this->dash(); this->elementPause(); this->dot(); }
-void MorseSignaler::h() { this->dot(); this->elementPause(); this->dot(); this->elementPause(); this->dot(); this->elementPause(); this->dot(); }
-void MorseSignaler::i() { this->dot(); this->elementPause(); this->dot(); }
-void MorseSignaler::j() { this->dot(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); }
-void MorseSignaler::k() { this->dash(); this->elementPause(); this->dot(); this->elementPause(); this->dash(); }
-void MorseSignaler::l() { this->dot(); this->elementPause(); this->dash(); this->elementPause(); this->dot(); this->elementPause(); this->dot(); }
-void MorseSignaler::m() { this->dash(); this->elementPause(); this->dash(); }
-void MorseSignaler::n() { this->dash(); this->elementPause(); this->dot(); }
-void MorseSignaler::o() { this->dash(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); }
-void MorseSignaler::p() { this->dot(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); this->elementPause(); this->dot(); }
-void MorseSignaler::q() { this->dash(); this->elementPause(); this->dash(); this->elementPause(); this->dot(); this->elementPause(); this->dash(); }
-void MorseSignaler::r() { this->dot(); this->elementPause(); this->dash(); this->elementPause(); this->dot(); }
-void MorseSignaler::s() { this->dot(); this->elementPause(); this->dot(); this->elementPause(); this->dot(); }
-void MorseSignaler::t() { this->dash(); }
-void MorseSignaler::u() { this->dot(); this->elementPause(); this->dot(); this->elementPause(); this->dash(); }
-void MorseSignaler::v() { this->dot(); this->elementPause(); this->dot(); this->elementPause(); this->dot(); this->elementPause(); this->dash(); }
-void MorseSignaler::w() { this->dot(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); }
-void MorseSignaler::x() { this->dash(); this->elementPause(); this->dot(); this->elementPause(); this->dot(); this->elementPause(); this->dash(); }
-void MorseSignaler::y() { this->dash(); this->elementPause(); this->dot(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); }
-void MorseSignaler::z() { this->dash(); this->elementPause(); this->dash(); this->elementPause(); this->dot(); this->elementPause(); this->dot(); }
+void MorseSignaler::a() { dot(); elementPause(); dash(); }
+void MorseSignaler::b() { dash(); elementPause(); dot(); elementPause(); dot(); elementPause(); dot(); }
+void MorseSignaler::c() { dash(); elementPause(); dot(); elementPause(); dash(); elementPause(); dot(); }
+void MorseSignaler::d() { dash(); elementPause(); dot(); elementPause(); dot(); }
+void MorseSignaler::e() { dot(); }
+void MorseSignaler::f() { dot(); elementPause(); dot(); elementPause(); dash(); elementPause(); dot(); }
+void MorseSignaler::g() { dash(); elementPause(); dash(); elementPause(); dot(); }
+void MorseSignaler::h() { dot(); elementPause(); dot(); elementPause(); dot(); elementPause(); dot(); }
+void MorseSignaler::i() { dot(); elementPause(); dot(); }
+void MorseSignaler::j() { dot(); elementPause(); dash(); elementPause(); dash(); elementPause(); dash(); }
+void MorseSignaler::k() { dash(); elementPause(); dot(); elementPause(); dash(); }
+void MorseSignaler::l() { dot(); elementPause(); dash(); elementPause(); dot(); elementPause(); dot(); }
+void MorseSignaler::m() { dash(); elementPause(); dash(); }
+void MorseSignaler::n() { dash(); elementPause(); dot(); }
+void MorseSignaler::o() { dash(); elementPause(); dash(); elementPause(); dash(); }
+void MorseSignaler::p() { dot(); elementPause(); dash(); elementPause(); dash(); elementPause(); dot(); }
+void MorseSignaler::q() { dash(); elementPause(); dash(); elementPause(); dot(); elementPause(); dash(); }
+void MorseSignaler::r() { dot(); elementPause(); dash(); elementPause(); dot(); }
+void MorseSignaler::s() { dot(); elementPause(); dot(); elementPause(); dot(); }
+void MorseSignaler::t() { dash(); }
+void MorseSignaler::u() { dot(); elementPause(); dot(); elementPause(); dash(); }
+void MorseSignaler::v() { dot(); elementPause(); dot(); elementPause(); dot(); elementPause(); dash(); }
+void MorseSignaler::w() { dot(); elementPause(); dash(); elementPause(); dash(); }
+void MorseSignaler::x() { dash(); elementPause(); dot(); elementPause(); dot(); elementPause(); dash(); }
+void MorseSignaler::y() { dash(); elementPause(); dot(); elementPause(); dash(); elementPause(); dash(); }
+void MorseSignaler::z() { dash(); elementPause(); dash(); elementPause(); dot(); elementPause(); dot(); }
 
 MorseSignaler::MorseSignaler(int outputPin): outputPin(outputPin){
   alphabet[0] = &MorseSignaler::zero; 
@@ -118,6 +118,9 @@ int MorseSignaler::signal(char chars[]){
     if (ordv == 0) {
       break;
     }
+#ifdef OUTPUT_CONSOLE
+    printf("%c:%d", chars[i], ordv);
+#endif
     // this will be used to store our index into the alphabet
     int alphabetIndex = -1;
     // convert the ordinal value into an alphabet array index
@@ -137,7 +140,7 @@ int MorseSignaler::signal(char chars[]){
       alphabetIndex = ordv - 87;
     } else {
       // else we assume it's a numeric character
-      alphabetIndex = ordv - 49;
+      alphabetIndex = ordv - 48;
     }
     // blow chunks if we got something out of bounds
     if ((alphabetIndex < 0) || (alphabetIndex > ALPHABET_LENGTH)){
@@ -165,6 +168,6 @@ int main(int argc, char** argv){
     return 1;
   }
   MorseSignaler m(3);
-  return m.signal("pants");
+  return m.signal(argv[1]);
 }
 #endif

@@ -16,8 +16,6 @@ class MorseSignaler{
     MorseSignaler(int outputPin=1);
     int signal(char[]);
     void
-      dot(),
-      dash(),
       characterPause(),
       wordPause(),
       elementPause();
@@ -31,6 +29,9 @@ class MorseSignaler{
 
   private:
     const int outputPin;
+    void
+      dot(),
+      dash();
     void (MorseSignaler::*alphabet[ALPHABET_LENGTH])();
   
 };
