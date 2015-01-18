@@ -1,34 +1,34 @@
 #include "MorseSignaler.h"
 
 #ifdef OUTPUT_CONSOLE
-#ifdef ARDUINO
-  #error console handling should not be generated for arduino
-#endif
-// the basis for timings in morse code is the length of the dot
-void MorseSignaler::dot(){ printf("."); }
-// dash length is 3x dot length
-void MorseSignaler::dash(){ printf("-"); }
-// pause between elements is equal to the dot length
-void MorseSignaler::elementPause() { printf(" "); }
-// pause between words is 7x dot length
-void MorseSignaler::wordPause() { printf("|"); }
-// pause between characters is 3x dot length
-void MorseSignaler::characterPause() { printf("   "); }
+  #ifdef ARDUINO
+    #error console handling should not be generated for arduino
+  #endif
+  // the basis for timings in morse code is the length of the dot
+  void MorseSignaler::dot(){ printf("."); }
+  // dash length is 3x dot length
+  void MorseSignaler::dash(){ printf("-"); }
+  // pause between elements is equal to the dot length
+  void MorseSignaler::elementPause() { printf(" "); }
+  // pause between words is 7x dot length
+  void MorseSignaler::wordPause() { printf("|"); }
+  // pause between characters is 3x dot length
+  void MorseSignaler::characterPause() { printf("   "); }
 #else
-#define DOT_LENGTH 250
-void MorseSignaler::dot(){
-  digitalWrite(outputPin, HIGH);
-  delay(DOT_LENGTH);
-  digitalWrite(outputPin, LOW);  
-}
-void MorseSignaler::dash(){
-  digitalWrite(outputPin, HIGH);
-  delay(DOT_LENGTH * 3);
-  digitalWrite(outputPin, LOW);
-}
-void MorseSignaler::characterPause(){ delay(DOT_LENGTH * 3); }
-void MorseSignaler::elementPause(){ delay(DOT_LENGTH); }
-void MorseSignaler::wordPause(){ delay(DOT_LENGTH * 7); }
+  #define DOT_LENGTH 250
+  void MorseSignaler::dot(){
+    digitalWrite(outputPin, HIGH);
+    delay(DOT_LENGTH);
+    digitalWrite(outputPin, LOW);  
+  }
+  void MorseSignaler::dash(){
+    digitalWrite(outputPin, HIGH);
+    delay(DOT_LENGTH * 3);
+    digitalWrite(outputPin, LOW);
+  }
+  void MorseSignaler::characterPause(){ delay(DOT_LENGTH * 3); }
+  void MorseSignaler::elementPause(){ delay(DOT_LENGTH); }
+  void MorseSignaler::wordPause(){ delay(DOT_LENGTH * 7); }
 #endif
 
 void MorseSignaler::zero(){ this->dash(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); }
