@@ -1,7 +1,11 @@
 #include <stdint.h>
+#include <stdio.h>
+#include <string.h>
 #ifndef ARDUINO
   // we'll be writing output to the console, presumably for debugging
   #define OUTPUT_CONSOLE 1
+#else 
+  #include <Arduino.h>
 #endif
 #define ALPHABET_LENGTH 36
 
