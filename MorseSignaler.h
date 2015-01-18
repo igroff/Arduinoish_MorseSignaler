@@ -1,9 +1,10 @@
-#include <stdint.h>
-#include <stdio.h>
-#include <string.h>
+#ifndef MORSE_SIGNALER_H
+#define MORSE_SIGNALER_H
+
 #ifndef ARDUINO
   // we'll be writing output to the console, presumably for debugging
   #define OUTPUT_CONSOLE 1
+  #include <stdio.h>
 #else 
   #include <Arduino.h>
 #endif
@@ -12,7 +13,7 @@
 class MorseSignaler{
 
   public:
-    MorseSignaler(uint8_t outputPin=1);
+    MorseSignaler(int outputPin=1);
     int signal(char[]);
     void
       dot(),
@@ -29,7 +30,9 @@ class MorseSignaler{
 
 
   private:
-    const uint8_t outputPin;
+    const int outputPin;
     void (MorseSignaler::*alphabet[ALPHABET_LENGTH])();
   
 };
+
+#endif //MORSE_SINGALER_H

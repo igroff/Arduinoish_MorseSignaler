@@ -1,6 +1,9 @@
 #include "MorseSignaler.h"
 
 #ifdef OUTPUT_CONSOLE
+#ifdef ARDUINO
+  #error console handling should not be generated for arduino
+#endif
 // the basis for timings in morse code is the length of the dot
 void MorseSignaler::dot(){ printf("."); }
 // dash length is 3x dot length
@@ -28,7 +31,6 @@ void MorseSignaler::elementPause(){ delay(DOT_LENGTH); }
 void MorseSignaler::wordPause(){ delay(DOT_LENGTH * 7); }
 #endif
 
-void (*fp)();
 void MorseSignaler::zero(){ this->dash(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); }
 void MorseSignaler::one(){ this->dot(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); }
 void MorseSignaler::two(){ this->dot(); this->elementPause(); this->dot(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); }
@@ -67,7 +69,7 @@ void MorseSignaler::x() { this->dash(); this->elementPause(); this->dot(); this-
 void MorseSignaler::y() { this->dash(); this->elementPause(); this->dot(); this->elementPause(); this->dash(); this->elementPause(); this->dash(); }
 void MorseSignaler::z() { this->dash(); this->elementPause(); this->dash(); this->elementPause(); this->dot(); this->elementPause(); this->dot(); }
 
-MorseSignaler::MorseSignaler(uint8_t outputPin): outputPin(outputPin){
+MorseSignaler::MorseSignaler(int outputPin): outputPin(outputPin){
   alphabet[0] = &MorseSignaler::zero; 
   alphabet[1] = &MorseSignaler::one; 
   alphabet[2] = &MorseSignaler::two; 
@@ -105,15 +107,17 @@ MorseSignaler::MorseSignaler(uint8_t outputPin): outputPin(outputPin){
   alphabet[33] = &MorseSignaler::x; 
   alphabet[34] = &MorseSignaler::y; 
   alphabet[35] = &MorseSignaler::z; 
-  printf("outputpin: %d\n", outputPin);
 }
 
 int MorseSignaler::signal(char chars[]){
   void (MorseSignaler::*fp)();
   // for each character in the stirng
-  for (int i = 0; i < strlen(chars); i++){
+  for (int i = 0; ; i++){
     // get ordinal value of the character
     int ordv = chars[i]; 
+    if (ordv == 0) {
+      break;
+    }
     // this will be used to store our index into the alphabet
     int alphabetIndex = -1;
     // convert the ordinal value into an alphabet array index
@@ -151,7 +155,16 @@ int MorseSignaler::signal(char chars[]){
   return 0;
 }
 
+#ifdef OUTPUT_CONSOLE
+#ifdef ARDUINO
+  #error we shouldn't be generating console stuff for tharduino
+#endif
 int main(int argc, char** argv){
+  if (argc != 2){
+    printf("\t\tYou need to tell me what to encode!\n");
+    return 1;
+  }
   MorseSignaler m(3);
-  m.signal("pants");
+  return m.signal("pants");
 }
+#endif
